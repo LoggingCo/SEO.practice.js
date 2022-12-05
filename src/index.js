@@ -3,13 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { hydrate, render } from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+window.snapSaveState = () => {
+  document.querySelector('#app').setAttribute('data-server-rendered', 'true');
+};
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+if (container.hasChildNodes()) {
+  hydrate(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    root,
+  );
+} else {
+  root.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+  );
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

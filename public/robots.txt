@@ -1,13 +1,13 @@
 # Google Search
 User-agent: Googlebot
 Allow : / 
-Disallow: /login
+Disallow: /
 Disallow: /mypage
 Crawl-delay: 30
 
 # Naver Search
 User-agent: Yeti
 Allow: /
-Disallow: /login
+Disallow: /
 Disallow: /mypage
 Crawl-delay: 30

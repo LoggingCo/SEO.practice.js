@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src"
+  },
+  "include": ["src", "sitemapGenerator.js", "sitemapGenerator.js", "sitemapGenerator.js"]
+}
